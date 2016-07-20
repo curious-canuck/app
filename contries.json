@@ -1,0 +1,745 @@
+[
+{
+Code: "AF"
+},
+{
+ Code: "AX"
+},
+{
+ Code: "AL"
+},
+{
+ Code: "DZ"
+},
+{
+ Code: "AS"
+},
+{
+ Code: "AD"
+},
+{
+ Code: "AO"
+},
+{
+ Code: "AI"
+},
+{
+Code: "AQ"
+},
+{
+Code: "AG"
+},
+{
+Code: "AR"
+},
+{
+Code: "AM"
+},
+{
+Code: "AW"
+},
+{
+Code: "AU"
+},
+{
+ Code: "AT"
+},
+{
+Code: "AZ"
+},
+{
+Code: "BS"
+},
+{
+Code: "BH"
+},
+{
+Code: "BD"
+},
+{
+Code: "BB"
+},
+{
+Code: "BY"
+},
+{
+Code: "BE"
+},
+{
+Code: "BZ"
+},
+{
+Code: "BJ"
+},
+{
+Code: "BM"
+},
+{
+Code: "BT"
+},
+{
+Code: "BO"
+},
+{
+Code: "BQ"
+},
+{
+Code: "BA"
+},
+{
+Code: "BW"
+},
+{
+Code: "BV"
+},
+{
+Code: "BR"
+},
+{
+Code: "IO"
+},
+{
+Code: "BN"
+},
+{
+Code: "BG"
+},
+{
+Code: "BF"
+},
+{
+Code: "BI"
+},
+{
+Code: "KH"
+},
+{
+Code: "CM"
+},
+{
+Code: "CA"
+},
+{
+Code: "CV"
+},
+{
+Code: "KY"
+},
+{
+Code: "CF"
+},
+{
+Code: "TD"
+},
+{
+Code: "CL"
+},
+{
+Code: "CN"
+},
+{
+Code: "CX"
+},
+{
+Code: "CC"
+},
+{
+Code: "CO"
+},
+{
+Code: "CG"
+},
+{
+Code: "CD"
+},
+{
+Code: "CK"
+},
+{
+Code: "CR"
+},
+{
+Code: "CI"
+},
+{
+Code: "HR"
+},
+{
+Code: "CU"
+},
+{
+Code: "CW"
+},
+{
+Code: "CY"
+},
+{
+Code: "CZ"
+},
+{
+Code: "DK"
+},
+{
+Code: "DJ"
+},
+{
+Code: "DM"
+},
+{
+Code: "DO"
+},
+{
+Code: "EC"
+},
+{
+Code: "EG"
+},
+{
+Code: "SV"
+},
+{
+Code: "GQ"
+},
+{
+Code: "ER"
+},
+{
+Code: "EE"
+},
+{
+Code: "ET"
+},
+{
+Code: "FK"
+},
+{
+Code: "FO"
+},
+{
+Code: "FJ"
+},
+{
+Code: "FI"
+},
+{
+Code: "FR"
+},
+{
+Code: "GF"
+},
+{
+Code: "PF"
+},
+{
+Code: "TF"
+},
+{
+Code: "GA"
+},
+{
+Code: "GM"
+},
+{
+Code: "GE"
+},
+{
+Code: "DE"
+},
+{
+Code: "GH"
+},
+{
+Code: "GI"
+},
+{
+Code: "GR"
+},
+{
+Code: "GL"
+},
+{
+Code: "GD"
+},
+{
+Code: "GP"
+},
+{
+Code: "GU"
+},
+{
+Code: "GT"
+},
+{
+Code: "GG"
+},
+{
+Code: "GN"
+},
+{
+Code: "GW"
+},
+{
+Code: "GY"
+},
+{
+Code: "HT"
+},
+{
+Code: "HM"
+},
+{
+Code: "VA"
+},
+{
+Code: "HN"
+},
+{
+Code: "HK"
+},
+{
+Code: "HU"
+},
+{
+Code: "IS"
+},
+{
+Code: "IN"
+},
+{
+Code: "ID"
+},
+{
+Code: "IR"
+},
+{
+Code: "IQ"
+},
+{
+Code: "IE"
+},
+{
+Code: "IM"
+},
+{
+Code: "IL"
+},
+{
+Code: "IT"
+},
+{
+Code: "JM"
+},
+{
+Code: "JP"
+},
+{
+Code: "JE"
+},
+{
+Code: "JO"
+},
+{
+Code: "KZ"
+},
+{
+Code: "KE"
+},
+{
+Code: "KI"
+},
+{
+Code: "KP"
+},
+{
+Code: "KR"
+},
+{
+Code: "KW"
+},
+{
+Code: "KG"
+},
+{
+Code: "LA"
+},
+{
+Code: "LV"
+},
+{
+Code: "LB"
+},
+{
+Code: "LS"
+},
+{
+Code: "LR"
+},
+{
+Code: "LY"
+},
+{
+Code: "LI"
+},
+{
+Code: "LT"
+},
+{
+Code: "LU"
+},
+{
+Code: "MO"
+},
+{
+Code: "MK"
+},
+{
+Code: "MG"
+},
+{
+Code: "MW"
+},
+{
+Code: "MY"
+},
+{
+Code: "MV"
+},
+{
+Code: "ML"
+},
+{
+Code: "MT"
+},
+{
+Code: "MH"
+},
+{
+Code: "MQ"
+},
+{
+Code: "MR"
+},
+{
+Code: "MU"
+},
+{
+Code: "YT"
+},
+{
+Code: "MX"
+},
+{
+Code: "FM"
+},
+{
+Code: "MD"
+},
+{
+Code: "MC"
+},
+{
+Code: "MN"
+},
+{
+Code: "ME"
+},
+{
+Code: "MS"
+},
+{
+Code: "MA"
+},
+{
+Code: "MZ"
+},
+{
+Code: "MM"
+},
+{
+Code: "NA"
+},
+{
+Code: "NR"
+},
+{
+Code: "NP"
+},
+{
+Code: "NL"
+},
+{
+Code: "NC"
+},
+{
+Code: "NZ"
+},
+{
+Code: "NI"
+},
+{
+Code: "NE"
+},
+{
+Code: "NG"
+},
+{
+Code: "NU"
+},
+{
+Code: "NF"
+},
+{
+Code: "MP"
+},
+{
+Code: "NO"
+},
+{
+Code: "OM"
+},
+{
+Code: "PK"
+},
+{
+Code: "PW"
+},
+{
+Code: "PS"
+},
+{
+Code: "PA"
+},
+{
+Code: "PG"
+},
+{
+Code: "PY"
+},
+{
+Code: "PE"
+},
+{
+Code: "PH"
+},
+{
+Code: "PN"
+},
+{
+Code: "PL"
+},
+{
+Code: "PT"
+},
+{
+Code: "PR"
+},
+{
+Code: "QA"
+},
+{
+Code: "RE"
+},
+{
+Code: "RO"
+},
+{
+Code: "RU"
+},
+{
+Code: "RW"
+},
+{
+Code: "BL"
+},
+{
+Code: "SH"
+},
+{
+Code: "KN"
+},
+{
+Code: "LC"
+},
+{
+Code: "MF"
+},
+{
+Code: "PM"
+},
+{
+Code: "VC"
+},
+{
+Code: "WS"
+},
+{
+Code: "SM"
+},
+{
+Code: "ST"
+},
+{
+Code: "SA"
+},
+{
+Code: "SN"
+},
+{
+Code: "RS"
+},
+{
+Code: "SC"
+},
+{
+Code: "SL"
+},
+{
+Code: "SG"
+},
+{
+Code: "SX"
+},
+{
+Code: "SK"
+},
+{
+Code: "SI"
+},
+{
+Code: "SB"
+},
+{
+Code: "SO"
+},
+{
+Code: "ZA"
+},
+{
+Code: "GS"
+},
+{
+Code: "SS"
+},
+{
+Code: "ES"
+},
+{
+Code: "LK"
+},
+{
+Code: "SD"
+},
+{
+Code: "SR"
+},
+{
+Code: "SJ"
+},
+{
+Code: "SZ"
+},
+{
+Code: "SE"
+},
+{
+Code: "CH"
+},
+{
+Code: "SY"
+},
+{
+Code: "TW"
+},
+{
+Code: "TJ"
+},
+{
+Code: "TZ"
+},
+{
+Code: "TH"
+},
+{
+Code: "TL"
+},
+{
+Code: "TG"
+},
+{
+Code: "TK"
+},
+{
+Code: "TO"
+},
+{
+Code: "TT"
+},
+{
+Code: "TN"
+},
+{
+Code: "TR"
+},
+{
+Code: "TM"
+},
+{
+Code: "TC"
+},
+{
+Code: "TV"
+},
+{
+Code: "UG"
+},
+{
+Code: "UA"
+},
+{
+Code: "AE"
+},
+{
+Code: "GB"
+},
+{
+Code: "US"
+},
+{
+Code: "UM"
+},
+{
+Code: "UY"
+},
+{
+Code: "UZ"
+},
+{
+Code: "VU"
+},
+{
+Code: "VE"
+},
+{
+Code: "VN"
+},
+Code: "VG"
+},
+{
+Code: "VI"
+},
+{
+Code: "WF"
+},
+{
+Code: "EH"
+},
+{
+Code: "YE"
+},
+{
+Code: "ZM"
+},
+{
+Code: "ZW"
+}
+];
