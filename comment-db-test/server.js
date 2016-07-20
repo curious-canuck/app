@@ -6,6 +6,7 @@ const app             = express()
 const path            = require('path')
 const bodyParser      = require('body-parser')
 const mongoDB         = require('mongodb')
+const commentRouter   = require('./routes/comments')
 
 const PORT            = process.env.PORT || process.argv[2] || 3000
 
@@ -21,3 +22,7 @@ app.set('view engine', 'ejs')
 app.listen(PORT, function(){
   console.log("server up and running on port ", PORT)
 })
+
+/* Routes */
+
+app.use('/comments', commentRouter);
