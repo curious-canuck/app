@@ -26,3 +26,6 @@ app.listen(PORT, function(){
 /* Routes */
 
 app.use('/comments', commentRouter);
+app.get('/', function(req,res){
+  res.render('home')
+})
