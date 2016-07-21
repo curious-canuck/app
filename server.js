@@ -13,10 +13,10 @@ const port            = 3000;
 const app             = express();
 
 
-app.set('view engine','ejs');
-app.use(express.static(path.join(__dirname,'public')));
+// app.set('view engine','ejs');
+// app.use(express.static(path.join(__dirname,'public')));
 
-app.use('/', apiRoute)
+app.use('/api', apiRoute)
 app.use(logger('dev'));
 
 // bobbyParser.jason

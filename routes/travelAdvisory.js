@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { fullPull } = require('../models/travelAdvisory');
+const { getData } = require('../models/travelAdvisory');
 
 router.get('/', (req,res)=>{
   res.render('index')
 })
 
-router.get('/api', fullPull, (req,res)=>{
+router.get('/:code', getData, (req,res)=>{
 res.json(res.results)
 });
 

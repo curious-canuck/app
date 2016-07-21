@@ -16,7 +16,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
+    /*new webpack.optimize.UglifyJsPlugin({
       compress:{
         warnings: true
       }
@@ -25,7 +25,7 @@ module.exports = {
       'process.env':{
         'NODE_ENV': JSON.stringify('production')
       }
-    }),
+    }),*/
     new webpack.optimize.CommonsChunkPlugin('/js/common.js'),
     new HtmlWebpackPlugin({
       title: 'Tasks',

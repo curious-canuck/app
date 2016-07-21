@@ -1,15 +1,15 @@
 import React from 'react';
 
 const Search = props=>
-    <div className='container'>
-
-<form onSubmit={props.onSubmitSearch}>
+  <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
+    <div className="col-sm-12">
+      <form onSubmit={props.onSubmitSearch}>
         <div className="form-group">
-        <label for="">Country Search</label>
           <input
+          onChange={props.onUpdateSearch}
           value={props.query}
           type="text"
-          placeholder="Enter a movie title..."
+          placeholder="Enter a country..."
           className="form-control" />
         </div>
         <div className="form-group col-sm-4 col-sm-offset-4">
@@ -20,9 +20,7 @@ const Search = props=>
           </button>
         </div>
       </form>
-
-</div>
+    </div>
+  </div>
 
 export default Search;
-
-
