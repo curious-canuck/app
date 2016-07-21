@@ -5,7 +5,6 @@ const logger          = require('morgan')
 const app             = express()
 const path            = require('path')
 const bodyParser      = require('body-parser')
-const mongoDB         = require('mongodb')
 const commentRouter   = require('./routes/comments')
 const dropdownRouter  = require('./routes/dropdown')
 
@@ -15,9 +14,6 @@ const PORT            = process.env.PORT || process.argv[2] || 3000
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname,'public')));
-
-// set up ejs to render the views
-app.set('view engine', 'ejs')
 
 // set up server
 app.listen(PORT, function(){
