@@ -7,6 +7,7 @@ import Header           from './Header.jsx'
 import Search           from './Search.jsx'
 import Comments         from './Comments.jsx'
 import Country          from './Country.jsx'
+import Login           from './Login.jsx'
 
 // create a React Component called _App_
 export default class App extends React.Component {
@@ -16,9 +17,9 @@ export default class App extends React.Component {
 
     this.state = {
       CC: "",
-      searched: true,
+      searched: false,
       UN: "",
-      loggedin: true
+      loggedin: false
     }
 
   }
@@ -40,6 +41,9 @@ export default class App extends React.Component {
             <Comments />
             <Country />
           </div>
+          <footer>
+            <Login />
+          </footer>
         </div>
       )
     } else {
@@ -49,6 +53,9 @@ export default class App extends React.Component {
             <Header />
             <Search />
           </div>
+          <footer>
+            <Login />
+          </footer>
         </div>
       )
     }
