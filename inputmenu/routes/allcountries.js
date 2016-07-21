@@ -5,7 +5,7 @@ const  dataDb = require('../models/mongo');
 
 router.get('/' , dataDb.getAllCommentData, (req,res)=>{
 
-res.json(res.comments)
+  res.json(res.countries)
 
 } )
 

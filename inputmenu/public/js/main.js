@@ -1,4 +1,13 @@
 'use strict'
+
+// const SearchContainer = React.createClass({
+//   render() {
+//     return (
+
+//     )
+//   }
+// })
+
 const App = React.createClass({
 
   getInitialState() {
@@ -7,37 +16,34 @@ const App = React.createClass({
     }
   },
 
+  handleCountryList() {
+    let self = this
+    fetch('/dropd')
+    .then(r => r.json())
+    .then(function(data) {
+      self.setState({code: data})
+      // console.log(self.state.code)
+    })
+  },
+
+  componentDidMount(){
+
+  this.handleCountryList()
+
+  },
+
   render() {
-      let self = this
-     fetch('/dropd')
-      .then(r => r.json())
-      .then(function(data) {
-        self.setState({code: data})
-
-        console.log(self.state.code)
-      });
     return (
-
-      < select name = "code" > {
+      <select name = "code">
+      {
         this.state.code.map(function(country, id) {
-          return <option key = {
-            id
-          }
-          value = {
-            country.Code
-          } > {
-            country.Name
-          } < /option>
-
+            return <option key = {id} value = {country.Code} > {country.Name} < /option>
         })
-      } < /select>
-
+      }
+      </select>
     )
-
 }
 })
-
-
-ReactDOM.render( < App / > ,
-  document.querySelector('#container')
-);
+      ReactDOM.render( < App / > ,
+      document.querySelector('#container')
+        );

@@ -12,7 +12,7 @@ module.exports = {
         .toArray(function(err,data){
           if(err) throw err;
 
-          res.comments = data
+          res.countries = data
           next()
         })
     })
