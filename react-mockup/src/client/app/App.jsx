@@ -1,0 +1,61 @@
+'use strict'
+
+// import the libs we need
+import React            from 'react';
+import ReactDOM         from 'react-dom'
+import Header           from './Header.jsx'
+import Search           from './Search.jsx'
+import Comments         from './Comments.jsx'
+import Country          from './Country.jsx'
+
+// create a React Component called _App_
+export default class App extends React.Component {
+
+  constructor(){
+    super();
+
+    this.state = {
+      CC: "",
+      searched: true,
+      UN: "",
+      loggedin: true
+    }
+
+  }
+
+
+  render(){
+    if (this.state.searched) {
+      return (
+        <div>
+          <div className="row">
+            <header className="col-md-6">
+              <Header />
+            </header>
+            <div  className="col-md-6">
+              <Search />
+            </div>
+          </div>
+          <div className="row">
+            <Comments />
+            <Country />
+          </div>
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          <div className="jumbotron">
+            <Header />
+            <Search />
+          </div>
+        </div>
+      )
+    }
+  }
+
+
+
+}
+
+ReactDOM.render(<App/>, document.querySelector('#container'))
