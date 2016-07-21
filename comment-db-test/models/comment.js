@@ -19,21 +19,6 @@ module.exports = {
     })
   },
 
-  getAllCommentData(req,res,next){
-    MongoClient.connect(dbConnection, function(err,db){
-      if(err) throw err;
-
-      db.collection('code_comment')
-        .find({})
-        .toArray(function(err,data){
-          if(err) throw err;
-
-          res.comments = data
-          next()
-        })
-    })
-  },
-
   addCountryComments(req,res,next){
     let code      = req.query.code;
     let username  = req.query.username;
