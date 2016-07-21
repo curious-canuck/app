@@ -7,6 +7,9 @@ const CommentDisplay = React.createClass({
       .then(data=>{
         this.props.updateCurrentCountry(data)
       })
+      .catch((error) => {
+        console.error(error);
+      });
   },
 
   render(){
@@ -39,6 +42,9 @@ const CommentForm = React.createClass({
       .then(data=>{
         this.props.updateCurrentComments(data)
       })
+      .catch((error) => {
+        console.error(error);
+      });
   },
 
   render(){
