@@ -17,12 +17,16 @@ export default class App extends React.Component {
 
     this.state = {
       CC: "",
-      searched: false,
+      searched: true,
       UN: "",
       loggedin: false
     }
 
   }
+
+  // checkLogin(){
+
+  // }
 
 
   render(){
