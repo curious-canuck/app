@@ -14,3 +14,4 @@ commentRouter.get('/all', comDB.getAllCommentData, function(req,res){
 })
 
 module.exports = commentRouter;
+

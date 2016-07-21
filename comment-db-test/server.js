@@ -7,6 +7,7 @@ const path            = require('path')
 const bodyParser      = require('body-parser')
 const mongoDB         = require('mongodb')
 const commentRouter   = require('./routes/comments')
+const comDB           = require('./models/comment')
 
 const PORT            = process.env.PORT || process.argv[2] || 3000
 
@@ -26,6 +27,6 @@ app.listen(PORT, function(){
 /* Routes */
 
 app.use('/comments', commentRouter);
-app.get('/', function(req,res){
-  res.render('home')
+app.get('/', comDB.getAllCommentData, function(req,res){
+  res.render('home', {"comment": res.comments})
 })
