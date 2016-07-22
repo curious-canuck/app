@@ -1,26 +1,49 @@
+'use strict'
 import React from 'react';
+import AjaxAdapter        from '../helpers/AjaxAdapter.js'
+const ajax = new AjaxAdapter(fetch);
 
-const Search = props=>
-  <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
+export default class Search extends React.Component{
 
-      <form onSubmit={props.onSubmitSearch}>
-        <div className="form-group">
-          <input
-          onChange={props.onUpdateSearch}
-          value={props.query}
-          type="text"
-          placeholder="Enter a country..."
-          className="form-control" />
-        </div>
-        <div className="form-group col-sm-4 col-sm-offset-4">
-          <button
-          className="btn btn-block btn-primary"
-          type="submit">
-            Search
-          </button>
-        </div>
-      </form>
+    constructor() {
+    super();
+    this.state = {
+    code: []
+}
 
-  </div>
+  }
+componentDidMount(){
+  const self = this
+    ajax.handleCountryList()
+    .then(function(data) {
+      self.setState({code: data})
+        })
 
-export default Search;
+}
+
+render() {
+    return (
+    <select name = "code" x  >
+      {
+  this.state.code.map(function(country, id) {
+return <option key={id} value={country.Code} > {country.Name} </option>
+        })
+      }
+
+
+      </ select>
+
+
+    )
+}
+}
+
+
+
+
+
+
+
+
+
+

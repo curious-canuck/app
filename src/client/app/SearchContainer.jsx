@@ -1,7 +1,13 @@
+'use strict'
 import React              from 'react';
 import Search             from './Search.jsx';
 import Results            from './Results.jsx';
-import fullPull           from '../helpers/ajaxAdapter.js';
+import AjaxAdapter        from '../helpers/AjaxAdapter.js'
+// import util             from '../helpers/util.js'
+
+
+
+const ajax = new AjaxAdapter(fetch);
 
 export default class SearchContainer extends React.Component {
 
@@ -23,7 +29,7 @@ handleUpdateSearch(event) {
 handleSubmitSearch(event) {
   event.preventDefault();
 
-  fullPull(this.state.query).then( data => {
+  ajax.fullPull(this.state.query).then( data => {
     console.log(data)
     this.setState({
       results: data,
