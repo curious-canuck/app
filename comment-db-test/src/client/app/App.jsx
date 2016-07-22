@@ -4,6 +4,7 @@
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 import SearchForm       from './SearchForm.jsx'
+import CommentBox       from './CommentBox.jsx'
 
 import AjaxAdapter      from '../helpers/ajaxAdapter.js'
 import util             from '../helpers/util.js'
@@ -21,47 +22,33 @@ export default class App extends React.Component{
     }
   }
 
-  // updateCurrentComments(code){
-  //   ajax.getComments(code)
-  //     .then(data=>{
-  //       console.log(data)
-  //       this.setState({
-  //         currentComments: data.comments
-  //       })
-  //     })
-  // }
-
-  handleChange(e){
-    let self = this
-    console.log(this)
-    ajax.getComments(e.target.value)
+  handleChange(code){
+    let self = this;
+    ajax.getComments(code)
       .then(function(data){
         console.log("This is coming from handleChange",data)
         console.log(self)
         self.setState({
-          currentComments: data
+          currentComments: data,
+          currentCountry: code
         })
       })
   }
 
   render(){
+    console.log("App renders: ",this.state.currentComments, this.state.currentCountry)
     return (
       <div>
-        <select name="list"
-          onChange={this.handleChange.bind(this)}
-          value={this.state.currentCountry}>
-          <option value="">Choose a Country</option>
-          <option value="US">United States</option>
-          <option value="BO">Bolivia</option>
-        </select>
-        {this.state.currentComments.comments? (
-            this.state.currentComments.comments.map(function(each, id){
-              return(
-                <p key={id}><strong>{each.username}</strong>: {each.comment}</p>
-              )
-            })
-          )
-        : null
+        <SearchForm
+          handleChange={this.handleChange.bind(this)}
+          currentCountry={this.state.currentCountry} />
+        {this.state.currentComments.comments ?
+          // <CommentBox
+          //   currentComments={this.state.currentComments} />
+          this.state.currentComments.comments.map(function(each, id){
+            return <p key={id}><strong>{each.username}</strong>: {each.comment}</p>
+          })
+          : null
         }
       </div>
     )
