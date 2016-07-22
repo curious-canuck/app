@@ -20,9 +20,11 @@ module.exports = {
   },
 
   addCountryComments(req,res,next){
+    console.log(req.body)
+
     let code        = req.params.code;
-    let username    = req.query.username;
-    let comment     = req.query.commentInput;
+    let username    = req.body.username;
+    let comment     = req.body.comment;
 
     MongoClient.connect(dbConnection, function(err,db){
       if(err) throw err;

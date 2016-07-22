@@ -5,6 +5,7 @@ import React            from 'react';
 import ReactDOM         from 'react-dom';
 import SearchForm       from './SearchForm.jsx'
 import CommentBox       from './CommentBox.jsx'
+import CommentForm      from './CommentForm.jsx'
 
 import AjaxAdapter      from '../helpers/ajaxAdapter.js'
 import util             from '../helpers/util.js'
@@ -35,6 +36,16 @@ export default class App extends React.Component{
       })
   }
 
+  handleNewComment(NewComment, code){
+    ajax.addComment(NewComment, code)
+      .then(function(data){
+        console.log("This is coming from handleNewComment", data)
+        this.setState({
+          currentComments: data
+        })
+      })
+  }
+
   render(){
     console.log("App renders: ",this.state.currentComments, this.state.currentCountry)
     return (
@@ -50,6 +61,10 @@ export default class App extends React.Component{
           })
           : null
         }
+        <CommentForm
+          handleNewComment={this.handleNewComment.bind(this)}
+          currentCountry={this.state.currentCountry}
+         />
       </div>
     )
   }

@@ -9,14 +9,15 @@ export default class AjaxAdapter{
       .then(r=>r.json())
   }
 
-  addComment(countryCode){
-    return fetch(`/comments/add/${countryCode}`,
+  addComment(newComment, code){
+    console.log("from addComment ajax: ", newComment)
+    return fetch(`/comments/add/${code}`,
       {
         method:'PUT',
         headers:{
           "Content-type": "application/json; charset=UTF-8"
         },
-        body:JSON.stringify(countryCode)
+        body:JSON.stringify(newComment)
       })
       .then(r=>r.json())
   }
