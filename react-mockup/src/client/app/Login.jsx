@@ -4,7 +4,7 @@ export default class Login extends React.Component {
   render(){
     return(
       <div className="navbar navbar-default navbar-fixed-bottom text-center">
-        <form>
+        <form className=""input-group"">
         Log In:
         <input type="text" placeholder="User Name"/>
         <input type="password" placeholder="Password"/>
