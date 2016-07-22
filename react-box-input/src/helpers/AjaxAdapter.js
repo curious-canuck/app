@@ -6,7 +6,7 @@ export default class AjaxAdapter{
 
    handleCountryList() {
 
-    let self = this
+    // let self = this
      return fetch('/dropd')
     .then(r => r.json())
 
