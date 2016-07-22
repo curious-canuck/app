@@ -1,11 +1,11 @@
 const commentRouter = require('express').Router()
 const comDB         = require('../models/comment')
 
-commentRouter.get('/add', comDB.addCountryComments, function(req,res){
-  res.redirect('/')
+commentRouter.get('/add/:code', comDB.addCountryComments, function(req,res){
+  res.json(res.comments)
 })
 
-commentRouter.get('/', comDB.getCountryComments, function(req,res){
+commentRouter.get('/:code', comDB.getCountryComments, function(req,res){
   res.json(res.comments)
 })
 

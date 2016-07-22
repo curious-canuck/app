@@ -22,6 +22,7 @@ module.exports = {
     reasons: true
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('/js/common.js'),
     new HtmlWebpackPlugin({
       title: 'React Comment Component',
       xhtml: true,
@@ -38,9 +39,7 @@ module.exports = {
     include: path.join(__dirname, 'src'),
     loaders: [
       { test: /\.css$/,  loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
-      { test: /\.png$/,  loader: 'file-loader?name=/images/[name].[ext]' },
-      { test: /\.gif$/,  loader: 'file-loader' },
-      { test: /\.jpg$/,  loader: 'file-loader' },
+      { test: /\.(png|gif|jpg)$/,  loader: 'file-loader?name=/images/[name].[ext]' },
       { test: /\.jsx?$/, loader: 'babel'       },
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,

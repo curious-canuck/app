@@ -13,7 +13,7 @@ const PORT            = process.env.PORT || process.argv[2] || 3000
 // set up logging so that we can see what's happening
 app.use(logger('dev'))
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'dist')));
 
 // set up server
 app.listen(PORT, function(){

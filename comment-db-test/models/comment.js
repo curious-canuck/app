@@ -4,7 +4,7 @@ const dbConnection      = 'mongodb://localhost:27017/countries'
 module.exports = {
 
   getCountryComments(req,res,next){
-    let code = req.query.countryCode
+    let code = req.params.code
 
     MongoClient.connect(dbConnection, function(err,db){
       if(err) throw err;
@@ -20,7 +20,7 @@ module.exports = {
   },
 
   addCountryComments(req,res,next){
-    let code        = req.query.countryCode;
+    let code        = req.params.code;
     let username    = req.query.username;
     let comment     = req.query.commentInput;
 
@@ -40,6 +40,7 @@ module.exports = {
           if(err) throw err;
 
           console.log(data);
+          res.comments = data;
           next()
         }
       )

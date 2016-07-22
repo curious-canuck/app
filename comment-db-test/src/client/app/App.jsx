@@ -2,41 +2,70 @@
 
 // import the libs we need
 import React            from 'react';
-import ReactDOM         from 'react-dom'
+import ReactDOM         from 'react-dom';
+import SearchForm       from './SearchForm.jsx'
+
+import AjaxAdapter      from '../helpers/ajaxAdapter.js'
+import util             from '../helpers/util.js'
+
+const ajax = new AjaxAdapter(fetch);
 
 // create a React Component called _App_
 export default class App extends React.Component{
 
-    // every class gets a constructor.
-    // this is where we init the state.
-    constructor() {
+  constructor() {
+    super();
+    this.state = {
+      currentComments: {},
+      currentCountry: ''
+    }
+  }
 
-        // we also need to wake up our ancestors
-        super();
+  // updateCurrentComments(code){
+  //   ajax.getComments(code)
+  //     .then(data=>{
+  //       console.log(data)
+  //       this.setState({
+  //         currentComments: data.comments
+  //       })
+  //     })
+  // }
 
-        // here's our state
-        this.state = {
-          tasks : {}
+  handleChange(e){
+    let self = this
+    console.log(this)
+    ajax.getComments(e.target.value)
+      .then(function(data){
+        console.log("This is coming from handleChange",data)
+        console.log(self)
+        self.setState({
+          currentComments: data
+        })
+      })
+  }
+
+  render(){
+    return (
+      <div>
+        <select name="list"
+          onChange={this.handleChange.bind(this)}
+          value={this.state.currentCountry}>
+          <option value="">Choose a Country</option>
+          <option value="US">United States</option>
+          <option value="BO">Bolivia</option>
+        </select>
+        {this.state.currentComments.comments? (
+            this.state.currentComments.comments.map(function(each, id){
+              return(
+                <p key={id}><strong>{each.username}</strong>: {each.comment}</p>
+              )
+            })
+          )
+        : null
         }
-    }
-    // note that classes do **not** have commas between their methods
-
-    // 90% of your components will render()
-    // REMEMBER you can only return **one** root element from a render fn.
-    render(){
-        return(
-            <container>
-                <header>
-                    <p>Hello world example</p>
-                </header>
-                <div className="container">
-                    <div className="row">
-                    {/*everything goes in here*/}
-                    </div>
-                </div>
-            </container>
-        )
-    }
+      </div>
+    )
+  }
 }
 
 // mount our App at #container
