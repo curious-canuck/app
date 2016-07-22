@@ -2,7 +2,7 @@ import React from 'react';
 
 const Search = props=>
   <div className="jumbotron col-sm-6 col-sm-offset-3 text-center">
-    <div className="col-sm-12">
+
       <form onSubmit={props.onSubmitSearch}>
         <div className="form-group">
           <input
@@ -20,7 +20,7 @@ const Search = props=>
           </button>
         </div>
       </form>
-    </div>
+
   </div>
 
 export default Search;
