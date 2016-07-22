@@ -42,7 +42,6 @@ module.exports = {
           if(err) throw err;
 
           console.log(data);
-          res.comments = data;
           next()
         }
       )

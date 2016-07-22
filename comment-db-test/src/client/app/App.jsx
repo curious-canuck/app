@@ -23,6 +23,19 @@ export default class App extends React.Component{
     }
   }
 
+  componentDidMount(){
+    let self = this;
+    if(this.state.currentCountry){
+      ajax.getComments(this.state.currentCountry)
+        .then(function(data){
+          self.setState({
+            currentCountry: self.state.currentCountry,
+            currentComments: data
+          })
+        })
+    }
+  }
+
   handleChange(code){
     let self = this;
     ajax.getComments(code)
@@ -37,11 +50,13 @@ export default class App extends React.Component{
   }
 
   handleNewComment(NewComment, code){
+    let self = this
     ajax.addComment(NewComment, code)
       .then(function(data){
         console.log("This is coming from handleNewComment", data)
-        this.setState({
-          currentComments: data
+        self.setState({
+          currentComments: data,
+          currentCountry: code
         })
       })
   }
