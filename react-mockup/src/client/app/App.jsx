@@ -43,6 +43,9 @@ export default class App extends React.Component {
             <Comments />
             <Country />
           </div>
+          <footer>
+            <Login />
+          </footer>
         </div>
       )
     } else {
@@ -52,6 +55,9 @@ export default class App extends React.Component {
             <Header />
             <Search />
           </div>
+          <footer>
+            <Login />
+          </footer>
         </div>
       )
     }
