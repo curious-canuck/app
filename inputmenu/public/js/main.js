@@ -34,10 +34,12 @@ const App = React.createClass({
 
   render() {
     return (
+
       <select name = "code">
+
       {
         this.state.code.map(function(country, id) {
-            return <option key = {id} value = {country.Code} > {country.Name} < /option>
+            return <option key = {id} value = {country.Code} > {country.Name} </option>
         })
       }
       </select>

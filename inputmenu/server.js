@@ -13,13 +13,10 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(logger('dev'));
 
 
-app.listen(PORT, function() {
-  console.log('Server is listening on ',PORT);
-});
-
-
+app.use('/dropd', drop);
 app.get('/', (req,res)=>
 res.sendFile('index.html')
   )
-
-app.use('/dropd', drop);
+app.listen(PORT, function() {
+  console.log('Server is listening on ',PORT);
+});
