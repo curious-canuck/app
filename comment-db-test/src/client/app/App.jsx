@@ -23,18 +23,18 @@ export default class App extends React.Component{
     }
   }
 
-  componentDidMount(){
-    let self = this;
-    if(this.state.currentCountry){
-      ajax.getComments(this.state.currentCountry)
-        .then(function(data){
-          self.setState({
-            currentCountry: self.state.currentCountry,
-            currentComments: data
-          })
-        })
-    }
-  }
+  // componentDidMount(){
+  //   let self = this;
+  //   if(self.state.currentCountry){
+  //     ajax.getComments(self.state.currentCountry)
+  //       .then(function(data){
+  //         self.setState({
+  //           currentCountry: self.state.currentCountry,
+  //           currentComments: data
+  //         })
+  //       })
+  //   }
+  // }
 
   handleChange(code){
     let self = this;
@@ -54,6 +54,7 @@ export default class App extends React.Component{
     ajax.addComment(NewComment, code)
       .then(function(data){
         console.log("This is coming from handleNewComment", data)
+        self.handleChange(code)
         self.setState({
           currentComments: data,
           currentCountry: code
