@@ -18,10 +18,10 @@ export default class App extends React.Component{
   }
 componentDidMount(){
   const self = this
-ajax.handleCountryList()
-.then(function(data) {
-  self.setState({code: data})
-    })
+    ajax.handleCountryList()
+    .then(function(data) {
+      self.setState({code: data})
+        })
 
 }
 
@@ -44,7 +44,7 @@ render() {
       {
   this.state.code.map(function(country, id) {
 
-                return <option key={id} value={country.Code} > {country.Name} </option>
+return <option key={id} value={country.Code} > {country.Name} </option>
         })
       }
 
