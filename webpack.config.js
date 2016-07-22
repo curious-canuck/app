@@ -14,21 +14,18 @@ module.exports = {
     path: BUILD_DIR,
     filename: '/js/[name].js',
   },
-
+  cache: true,
+  debug: true,
+  devtool: 'eval-source-map',
+  stats: {
+    colors: true,
+    reasons: true
+  },
   plugins: [
-    /*new webpack.optimize.UglifyJsPlugin({
-      compress:{
-        warnings: true
-      }
-    }),
-    new webpack.DefinePlugin({
-      'process.env':{
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),*/
+  /* GUNNA NEED Uglifier */
     new webpack.optimize.CommonsChunkPlugin('/js/common.js'),
     new HtmlWebpackPlugin({
-      title: 'Tasks',
+      title: 'Curious Canuck App',
       xhtml: true,
       inject: false,
       template: require('html-webpack-template'),

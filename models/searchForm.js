@@ -1,27 +1,13 @@
-
- 'use strict'
- const MongoClient           =require('mongodb').MongoClient
- const dbConnection          ='mongodb://localhost:27017/countries'
-
-
-const config = process.env.DATABASE_URL || {
-  host:       process.env.DB_HOST,
-  port:       process.env.DB_PORT,
-  database:   process.env.DB_NAME,
-  user:       process.env.DB_USER,
-  password:   process.env.DB_PASS,
-};
-
-
-
+const {MongoClient}         = require('mongodb')
+const dbConnection          = 'mongodb://localhost:27017/countries'
 
 module.exports = {
 
- getAllCommentData(req,res,next){
+ getAllCountryCodes(req,res,next){
     MongoClient.connect(dbConnection, function(err,db){
       if(err) throw err;
 
-      db.collection('countries')
+      db.collection('code_comment')
         .find({})
         .toArray(function(err,data){
           if(err) throw err;

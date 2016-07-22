@@ -5,8 +5,6 @@ import Results            from './Results.jsx';
 import AjaxAdapter        from '../helpers/AjaxAdapter.js'
 // import util             from '../helpers/util.js'
 
-
-
 const ajax = new AjaxAdapter(fetch);
 
 export default class SearchContainer extends React.Component {
@@ -52,7 +50,7 @@ render() {
   } else {
     return (
       <div className="jumbotron col-sm-12 text-center">
-        <h1>Results</h1>
+        <h1>SEARCH</h1>
         <Search onUpdateSearch={this.handleUpdateSearch.bind(this)}
                 onSubmitSearch={this.handleSubmitSearch.bind(this)}
                 query={this.state.query} />
