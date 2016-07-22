@@ -12,6 +12,16 @@ const apiRoute        = require('./routes/travelAdvisory');
 const port            = 3000;
 const app             = express();
 
+
+//ALEX ADDITIONS////
+// const drop = require ('./routes/allcountries')
+// app.use( logger( DEV ? 'dev' : 'common') );
+// app.get('/', (req,res)=>
+// res.sendFile('index.html')
+//   )
+// app.use('/dropd', drop);
+////////////
+
 app.use('/api', apiRoute)
 app.use(logger('dev'));
 
