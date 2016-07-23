@@ -16,7 +16,7 @@ module.exports={
     const {username,user_id}=res.user
     // we should be certain that a user exists by now (res.user)
     const token = jwt.sign({username,user_id}, 'superSecret', {
-      expiresIn: 30 // expires in 24 hours
+      expiresIn: 30 // expires in 30 seconds
     });
 
     // return the information including token as JSON

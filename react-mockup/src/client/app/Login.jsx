@@ -8,7 +8,7 @@ handleSubmit(e){
     email: e.target.email.value,
     password: e.target.password.value
   }
-    fetch('/api/authenticate',{
+    fetch('/userapi/authenticate',{
       method:'POST',
       headers:{
         "Content-type": "application/json; charset=UTF-8"
@@ -28,6 +28,12 @@ handleSubmit(e){
 
 }
 
+clearLocalStorage(e){
+  e.preventDefault()
+  localStorage.setItem('token','')
+  localStorage.setItem('user','')
+  console.log('cleared out of local storage')
+}
 
 
 
@@ -40,6 +46,7 @@ handleSubmit(e){
           <input type="password" name="password" placeholder="Password"/>
           <input type="submit" />
         </form>
+        <button onClick={this.clearLocalStorage}>Logout</button>
       </div>
     )
   }
