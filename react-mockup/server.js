@@ -24,6 +24,7 @@ app.use( '/userapi',        require('./routes/userApi') );
 app.use( '/userapi/users',  require('./routes/users') );
 app.use( '/dropd',          require('./routes/allcountries'));
 app.use( '/api',            require('./routes/travelAdvisory'));
+app.use( '/comments',       require('./routes/comments'));
 
 app.use( express.static(path.join(__dirname, 'dist')))
 

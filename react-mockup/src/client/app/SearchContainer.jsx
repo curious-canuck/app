@@ -3,6 +3,7 @@ import Search             from './Search.jsx';
 import Results            from './Results.jsx';
 import AjaxAdapter        from '../helpers/AjaxAdapter.js'
 // import util             from '../helpers/util.js'
+import CommentDisplay     from './CommentDisplay.jsx'
 
 const ajax = new AjaxAdapter(fetch);
 
@@ -13,7 +14,9 @@ export default class SearchContainer extends React.Component {
     this.state = {
       searched: false,
       results: [],
-      countryData: []
+      countryData: [],
+      currentComments: {},
+      currentCountry: ''
     }
   }
 
@@ -28,12 +31,40 @@ export default class SearchContainer extends React.Component {
   handleSubmitSearch(countryCode) {
     ajax.fullPull(countryCode).then( data => {
       console.log(data)
+      this.handleChange(countryCode)
       this.setState({
         results: data,
         searched: true
       })
     })
   }
+
+  handleNewComment(NewComment, code){
+    let self = this
+    ajax.addComment(NewComment, code)
+      .then(function(data){
+        console.log("This is coming from handleNewComment", data)
+        self.handleChange(code)
+        self.setState({
+          currentComments: data,
+          currentCountry: code
+        })
+      })
+  }
+
+  handleChange(code){
+    let self = this;
+    ajax.getComments(code)
+      .then(function(data){
+        console.log("This is coming from handleChange",data)
+        console.log(self)
+        self.setState({
+          currentComments: data,
+          currentCountry: code
+        })
+      })
+  }
+
 
   render() {
     if(this.state.searched) {
@@ -42,6 +73,10 @@ export default class SearchContainer extends React.Component {
           <h1>RESULTS</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />
+          <CommentDisplay handleChange={this.handleChange.bind(this)}
+                  handleNewComment={this.handleNewComment.bind(this)}
+                  currentComments={this.state.currentComments}
+                  currentCountry={this.state.currentCountry} />
           <Results countryData={this.state.results} />
         </div>
       )

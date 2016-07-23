@@ -3,7 +3,7 @@ import AjaxAdapter  from '../helpers/AjaxAdapter.js'
 
 const ajax = new AjaxAdapter(fetch);
 
-export default function CommentBox(props){
+export default function Search(props){
 
   const handleChange = function(e){
     console.log(e.target.value)
