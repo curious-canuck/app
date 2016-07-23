@@ -6,4 +6,3 @@ const Header = props=>
 </div>
 
 export default Header;
-Contact GitHub API Training Shop Blog About

@@ -1,14 +1,5 @@
 import React from 'react';
 
-const dummyData={
-
-}
-
-
-
-
-
-
 export default function Country(props) {
   return(
     <div className="col-md-8 bordered">

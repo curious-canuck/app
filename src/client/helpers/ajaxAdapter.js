@@ -1,5 +1,3 @@
-'use strict'
-
 export default class AjaxAdapter{
 
 constructor(fetch){

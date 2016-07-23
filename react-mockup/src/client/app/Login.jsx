@@ -8,28 +8,23 @@ handleSubmit(e){
     email: e.target.email.value,
     password: e.target.password.value
   }
-    fetch('/api/authenticate',{
-      method:'POST',
-      headers:{
-        "Content-type": "application/json; charset=UTF-8"
-      },
-      body: JSON.stringify(data)
-    })
-    .then(data=>{
-      return data.json()
-    }).then(data=>
-      {console.log(data.token);
-      console.log(data.username)
-      localStorage.setItem('token', data.token)
-      localStorage.setItem('user', data.username)
-      }
-    )
-
-
+  fetch('/api/authenticate',{
+    method:'POST',
+    headers:{
+      "Content-type": "application/json; charset=UTF-8"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(data=>{
+    return data.json()
+  }).then(data=>
+    {console.log(data.token);
+    console.log(data.username)
+    localStorage.setItem('token', data.token)
+    localStorage.setItem('user', data.username)
+    }
+  )
 }
-
-
-
 
   render(){
     return(

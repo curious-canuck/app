@@ -16,14 +16,12 @@ export default class App extends React.Component {
 
   render(){
     return(
-    <container>
-      <Login />
-      <CreateUser />
-    </container>
+      <container>
+        <Login />
+        <CreateUser />
+      </container>
     )
   }
-
-
 
 }
 

@@ -2,7 +2,6 @@ const _db     = require('./connection');
 const bcrypt  = require('bcrypt');
 const salt    = bcrypt.genSaltSync(10);
 
-
 const createSecure = (password)=>
   new Promise( (resolve,reject)=>
     bcrypt.genSalt( (err, salt)=>
@@ -12,9 +11,7 @@ const createSecure = (password)=>
     )
   )
 
-
 module.exports = {
-
 
   /* GET user */
   getUserByUsername(req, res, next) {
