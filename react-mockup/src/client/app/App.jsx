@@ -3,8 +3,9 @@
 // import the libs we need
 import React            from 'react';
 import ReactDOM         from 'react-dom'
-import CreateUser       from './CreateUser.jsx'
 import Login            from './Login.jsx'
+// import Comments         from './Comments.jsx'
+import SearchContainer  from  './SearchContainer.jsx'
 
 // create a React Component called _App_
 export default class App extends React.Component {
@@ -12,8 +13,9 @@ export default class App extends React.Component {
   render(){
     return(
     <container>
-      <Login />
-      <CreateUser />
+    <SearchContainer />
+    <Login />
+
     </container>
     )
   }
