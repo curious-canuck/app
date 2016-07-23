@@ -1,12 +1,8 @@
-const router            = require('express').Router();
-const { getData }       = require('../models/travelAdvisory');
+const apiRouter       = require('express').Router();
+const travelAPI       = require('../models/travelAdvisory');
 
-  router.get('/', (req,res)=>{
-    res.render('index')
-  })
-
-  router.get('/:code', getData, (req,res)=>{
+  apiRouter.get('/:code', travelAPI.getData, (req,res)=>{
     res.json(res.results)
   });
 
-module.exports = router
+module.exports = apiRouter

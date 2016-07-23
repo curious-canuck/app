@@ -1,14 +1,11 @@
-const router = require('express').Router();
-const  dataDb = require('../models/searchForm');
+const dropDownRouter  = require('express').Router();
+const dataDb          = require('../models/searchForm');
 
-router.get('/' , dataDb.getAllCommentData, (req,res)=>{
-
+dropDownRouter.get('/', dataDb.getAllCountryCodes, (req,res)=>{
   res.json(res.countries)
+})
 
-} )
-
-
-module.exports = router;
+module.exports = dropDownRouter;
 
 
 
