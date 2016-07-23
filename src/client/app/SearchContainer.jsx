@@ -39,9 +39,10 @@ export default class SearchContainer extends React.Component {
     if(this.state.searched) {
       return (
         <div className="jumbotron">
-          <Results countryData={this.state.results} />
+          <h1>RESULTS</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />
+          <Results countryData={this.state.results} />
         </div>
       )
     } else {
