@@ -1,0 +1,20 @@
+DEPLOYMENT
+
+  - PUSH TO HEROKU
+  - INSTALL ALL DEPENDENCIES (modules) including dev
+  - BUILD REACT APP w/ WEBPACK
+  - CLEAN UP
+  - REINSTALL Production MODULES
+  - CLEANUP FILES
+      - DOn't need:
+        - src files
+        - scripts
+
+  - heroku pg:info
+  - heroku pg:push <local database> <remote database, add-on name from pg:info>
+  - heroku pg:reset <remote database>
+  - push again
+
+
+  git push heroku <branch-name>:master --force
+
