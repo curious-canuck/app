@@ -19,7 +19,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 
 // bring in the  routes
-app.use( '/userapi',        require('./routes/userApi')   );
+app.use( '/userapi',        require('./routes/userApi') );
 app.use( '/userapi/users',  require('./routes/users') );
 
 app.use( express.static(path.join(__dirname, 'dist')))
