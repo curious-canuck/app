@@ -8,7 +8,7 @@ handleSubmit(e){
     email: e.target.email.value,
     password: e.target.password.value
   }
-  fetch('/api/authenticate',{
+  fetch('/userapi/authenticate',{
     method:'POST',
     headers:{
       "Content-type": "application/json; charset=UTF-8"
