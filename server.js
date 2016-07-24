@@ -5,11 +5,10 @@ const dotenv          = (DEV) ? require('dotenv').config() : undefined;
 
 const bodyParser      = require('body-parser');
 const express         = require('express');
-const request         = require('request');
 const logger          = require('morgan');
 const path            = require('path');
 const apiRouter       = require('./routes/travelAdvisory');
-const dropDownRouter  = require ('./routes/allcountries')
+const dropDownRouter  = require('./routes/allcountries')
 
 const app             = express();
 const port            = 3000;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CommentBox(props){
+export default function Results(props){
   return (
     <div>
       <h1>{props.countryData.name}</h1>

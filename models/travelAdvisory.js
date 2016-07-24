@@ -14,9 +14,9 @@ module.exports = {
     },(err,response,body)=>{
       if(err) throw err;
 
-        console.log(body)
-        res.results = body;
-    next();
+      console.log(body)
+      res.results = body;
+      next();
     })
   }
 }
