@@ -87,26 +87,27 @@ export default class Login extends React.Component {
         <div className="navbar navbar-default navbar-fixed-bottom text-center">
 
           {this.state.isLoginClicked ?
-            <form onSubmit={this.handleLoginSubmit.bind(this)} className="input-group">
-              Log In:
+            <form onSubmit={this.handleLoginSubmit.bind(this)} className="text-center input-group form-inline float-left">
+              <label>E-mail:</label>
               <input type="text" name="email" placeholder="Email"/>
+              <label>Password:</label>
               <input type="password" name="password" placeholder="Password"/>
-              <button type="submit">Login</button>
+              <button type="submit" className="btn btn-danger start">Login</button>
             </form>
-           : <button onClick={this.toggleLoginClick.bind(this)}>Login</button>
+           : <button className="text-center btn btn-danger start" onClick={this.toggleLoginClick.bind(this)}>Login</button>
           }
 
           {this.state.isCreateUserClicked ?
-            <form onSubmit={this.handleCreateUserSubmit.bind(this)} >
+            <form onSubmit={this.handleCreateUserSubmit.bind(this)} className="input-group text-center form-inline float-left">
               <label>Name:</label>
               <input type="text" name="name"/>
               <label>Email:</label>
               <input type="text" name="email"/>
               <label>Password:</label>
               <input type="password" name="password"/>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Submit" className="btn btn-danger start" />
             </form>
-            : <button onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>
+            : <button className="text-center btn btn-danger start" onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>
           }
         </div>
       )

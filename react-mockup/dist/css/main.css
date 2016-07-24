@@ -6769,3 +6769,42 @@ button.close {
 .hide-input {
   display:none;
 }
+
+.float-left {
+  float:left;
+}
+
+.float-right {
+  float:right;
+}
+
+.start {
+  margin:0.5em 0.5em;
+}
+
+input {
+  margin:0.5em;
+}
+
+label {
+  margin-left:0.5em;
+}
+
+.capitalize {
+  text-transform: capitalize;
+  margin:0.5em;
+}
+
+.dropdown {
+  padding:1em;
+  clear:both;
+  width: 100%;
+}
+
+.fixed-left {
+  position:fixed;
+  left:0;
+  background-color:lightBlue;
+  height: 100vh;
+  margin-bottom: 70px;
+}

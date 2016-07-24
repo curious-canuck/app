@@ -93,16 +93,39 @@ export default class SearchContainer extends React.Component {
     if(this.state.searched) {
       return (
         <div className="jumbotron col-sm-12 text-center">
-          <h1>RESULTS</h1>
-          <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
-                  countryData={this.state.countryData} />
+
           {this.state.isLoggedIn ?
-            <CommentDisplay handleChange={this.handleChange.bind(this)}
-                handleNewComment={this.handleNewComment.bind(this)}
-                currentComments={this.state.currentComments}
-                currentCountry={this.state.currentCountry} />
-            : null }
-          <Results countryData={this.state.results} />
+            <div className="col-sm-9 float-right">
+              <h1>The Curious Canuck</h1>
+              <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
+                      countryData={this.state.countryData} />
+            </div>
+            : <div className="col-sm-12">
+                <h1>The Curious Canuck</h1>
+                <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
+                        countryData={this.state.countryData} />
+              </div>
+          }
+
+          <div className="row">
+          {this.state.isLoggedIn ?
+            <div className="col-sm-9 float-right">
+              <Results countryData={this.state.results} />
+            </div>
+
+            : <div className="col-sm-12">
+                <Results countryData={this.state.results} />
+              </div>
+          }
+          {this.state.isLoggedIn ?
+            <div className="col-sm-3 fixed-left comments">
+              <CommentDisplay handleChange={this.handleChange.bind(this)}
+                  handleNewComment={this.handleNewComment.bind(this)}
+                  currentComments={this.state.currentComments}
+                  currentCountry={this.state.currentCountry} />
+            </div>
+          : null }
+          </div>
 
           {!this.state.isLoggedIn ?
             <Login
@@ -117,7 +140,7 @@ export default class SearchContainer extends React.Component {
     } else {
       return (
         <div className="jumbotron col-sm-12 text-center">
-          <h1>SEARCH</h1>
+          <h1>The Curious Canuck</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />
           {!this.state.isLoggedIn ?
