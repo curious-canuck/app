@@ -9,7 +9,7 @@ export default class CreateUser extends React.Component {
       email: e.target.email.value,
       password: e.target.password.value
     }
-    fetch('/userapi/users',{
+    fetch('/userApi/users',{
       method:'POST',
       headers:{
         "Content-type": "application/json; charset=UTF-8"
