@@ -1,4 +1,5 @@
-import React from 'react';
+import React      from 'react';
+import Header     from './Header.jsx'
 
 export default class Login extends React.Component {
   constructor(){
@@ -40,14 +41,15 @@ export default class Login extends React.Component {
     })
     .then(data=>{
       return data.json()
-    }).then(data=>
-      {console.log(data.token);
+    })
+    .then(data=>{
+      console.log(data.token);
       console.log(data.username)
       localStorage.setItem('token', data.token)
       localStorage.setItem('user', data.username)
-      this.props.toggleLogin()
-      }
-    )
+
+      console.log(self)
+    })
   }
 
   handleCreateUserSubmit(e){
@@ -73,34 +75,33 @@ export default class Login extends React.Component {
 
   render(){
     let self=this;
-    return(
-      <div className="navbar navbar-default navbar-fixed-bottom text-center">
+      return(
+        <div className="navbar navbar-default navbar-fixed-bottom text-center">
 
-        {this.state.isLoginClicked ?
-          <form onSubmit={this.handleLoginSubmit} className="input-group">
-            Log In:
-            <input type="text" name="email" placeholder="Email"/>
-            <input type="password" name="password" placeholder="Password"/>
-            <input type="submit" />
-          </form>
-         : <button onClick={this.toggleLoginClick.bind(this)}>Login</button>
-        }
+          {this.state.isLoginClicked ?
+            <form onSubmit={this.handleLoginSubmit} className="input-group">
+              Log In:
+              <input type="text" name="email" placeholder="Email"/>
+              <input type="password" name="password" placeholder="Password"/>
+              <input type="submit" />
+            </form>
+           : <button onClick={this.toggleLoginClick.bind(this)}>Login</button>
+          }
 
-
-        {this.state.isCreateUserClicked ?
-          <form onSubmit={this.handleCreateUserSubmit} >
-            <label>Name:</label>
-            <input type="text" name="name"/>
-            <label>Email:</label>
-            <input type="text" name="email"/>
-            <label>Password:</label>
-            <input type="password" name="password"/>
-            <input type="submit" value="Submit"/>
-          </form>
-          : <button onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>
-        }
-      </div>
-    )
+          {this.state.isCreateUserClicked ?
+            <form onSubmit={this.handleCreateUserSubmit} >
+              <label>Name:</label>
+              <input type="text" name="name"/>
+              <label>Email:</label>
+              <input type="text" name="email"/>
+              <label>Password:</label>
+              <input type="password" name="password"/>
+              <input type="submit" value="Submit"/>
+            </form>
+            : <button onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>
+          }
+        </div>
+      )
   }
 
 }
