@@ -18,12 +18,14 @@ export default function CommentForm(props){
 
   return (
     <div className="row">
-    <form onSubmit={handleSubmit} className="navbar-fixed-bottom">
-      <input type="text" readOnly name="code" value={props.currentCountry} className="hide-input" />
-      <input type="text" readOnly name="username" value={localStorage.user} className="hide-input" />
-      <input type="text" name="text" placeholder="Enter comment" className="col-sm-1"/>
-      <input type="submit" value="Send" className="col-sm-1" />
-    </form>
+    <div className="col-sm-3 fixed-left">
+      <form onSubmit={handleSubmit} className="navbar-fixed-bottom">
+        <input type="text" readOnly name="code" value={props.currentCountry} className="hide-input" />
+        <input type="text" readOnly name="username" value={localStorage.user} className="hide-input" />
+        <input type="textbox" name="text" placeholder="Enter comment" className="input-lg"/>
+        <input type="submit" value="Send" className="input-sm" />
+      </form>
+    </div>
     </div>
   )
 

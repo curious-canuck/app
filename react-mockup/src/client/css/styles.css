@@ -48,3 +48,35 @@ label {
   height: 100vh;
   margin-bottom: 70px;
 }
+
+.footer {
+  border-top:0.1em solid #999;
+}
+
+.bg-image {
+  background-image: url(http://media.giphy.com/media/3oEduIYnCM7K9Qjr0c/giphy.gif);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+  color: white;
+}
+
+.bg-searched .three {
+  /*background-color: crimson;*/
+  /*background-image:url(http://i.telegraph.co.uk/multimedia/archive/03553/trailfinders_ontar_3553207b.jpg);*/
+}
+
+.bg-searched .one {
+  background-color: yellow;
+}
+
+.bg-searched .two {
+  background-color: orange;
+}
+
+.bg-searched .zero {
+  background-color: green;
+}

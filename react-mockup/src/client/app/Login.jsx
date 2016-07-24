@@ -84,14 +84,14 @@ export default class Login extends React.Component {
       return <Header toggleLogin={this.props.toggleLogin} />
     } else {
       return(
-        <div className="navbar navbar-default navbar-fixed-bottom text-center">
+        <div className="navbar navbar-default navbar-fixed-bottom text-center footer">
 
           {this.state.isLoginClicked ?
             <form onSubmit={this.handleLoginSubmit.bind(this)} className="text-center input-group form-inline float-left">
-              <label>E-mail:</label>
-              <input type="text" name="email" placeholder="Email"/>
-              <label>Password:</label>
-              <input type="password" name="password" placeholder="Password"/>
+              <label className="black">E-mail:</label>
+              <input type="text" name="email" placeholder="Email" className="black"/>
+              <label className="black">Password:</label>
+              <input type="password" name="password" placeholder="Password" className="black"/>
               <button type="submit" className="btn btn-danger start">Login</button>
             </form>
            : <button className="text-center btn btn-danger start" onClick={this.toggleLoginClick.bind(this)}>Login</button>
@@ -99,12 +99,12 @@ export default class Login extends React.Component {
 
           {this.state.isCreateUserClicked ?
             <form onSubmit={this.handleCreateUserSubmit.bind(this)} className="input-group text-center form-inline float-left">
-              <label>Name:</label>
-              <input type="text" name="name"/>
-              <label>Email:</label>
-              <input type="text" name="email"/>
-              <label>Password:</label>
-              <input type="password" name="password"/>
+              <label className="black">Name:</label>
+              <input type="text" name="name" className="black"/>
+              <label className="black">Email:</label>
+              <input type="text" name="email" className="black"/>
+              <label className="black">Password:</label>
+              <input type="password" name="password" className="black"/>
               <input type="submit" value="Submit" className="btn btn-danger start" />
             </form>
             : <button className="text-center btn btn-danger start" onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>

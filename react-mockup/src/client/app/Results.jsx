@@ -7,42 +7,40 @@ export default function Results(props){
         <h2>{props.countryData.name}</h2>
       </div>
       <div className="row">
-        <div className="advisory col-md-5">
-          <h3><em>{props.countryData.advisoryText}</em></h3>
-          <div className="col-md-4 text-center">
-            <h2>{props.countryData.advisoryState}</h2>
-          </div>
+        {/* HEALTH */}
+        <div className="health col-md-4">
+          <h3>Current Health Risks :</h3>
+          <p>{props.countryData.health.description}</p>
+        </div>
+        <div className="advisory col-md-4">
+          <h3>Advisory</h3>
+          <p><em>{props.countryData.advisoryText}</em></p>
+          <h2>{props.countryData.advisoryState}<p>/3</p></h2>
+          {/* EMBASSY */ }
+          <p><strong>Embassy Location :</strong> {props.countryData.offices[0].address}</p>
+        </div>
+        {/* CLIMATE */}
+        <div className="climate col-md-4">
+          <h3>Climate Risks :</h3>
+          <p>{props.countryData.climate.description}</p>
+        </div>
       </div>
 
-          {/* EMBASSY */ }
-          <div className="embassy col-md-3">
-            <p><strong>Embassy Location :</strong> {props.countryData.offices[0].address}</p>
-          </div>
-
-          {/* HEALTH */}
-          <div className="health col-md-8">
-            <h3>Current Health Risks :</h3>
-            <p>{props.countryData.health.description}</p>
-          </div>
-
-          {/* CLIMATE */}
-          <div className="climate col-md-4">
-            <h3>Climate Risks :</h3>
-            <p>{props.countryData.climate.description}</p>
-          </div>
-
-          {/* SAFETY */}
-          <div className="safety col-md-4">
-            <h3>Current Safety Issues: {props.countryData.safety.safetyInfo[0].category}</h3>
-            <p>{props.countryData.safety.safetyInfo[0].description}</p>
-          </div>
-
-          {/* CULTURE ISSUES */}
-          <div className="culture col-md-4">
-            <h3><strong>Current Cultural Issues: {props.countryData.lawAndCulture.lawAndCultureInfo[0].category}</strong></h3>
-            <p>{props.countryData.lawAndCulture.lawAndCultureInfo[0].description}</p>
-          </div>
+      <div className="row">
+        {/* SAFETY */}
+        <div className="safety col-md-6">
+          <h3>Current Safety Issues:</h3>
+          <h4>{props.countryData.safety.safetyInfo[0].category}</h4>
+          <p>{props.countryData.safety.safetyInfo[0].description}</p>
         </div>
+
+        {/* CULTURE ISSUES */}
+        <div className="culture col-md-6">
+          <h3><strong>Current Cultural Issues:</strong></h3>
+          <h4>{props.countryData.lawAndCulture.lawAndCultureInfo[0].category}</h4>
+          <p>{props.countryData.lawAndCulture.lawAndCultureInfo[0].description}</p>
+        </div>
+      </div>
 
     </div>
   )

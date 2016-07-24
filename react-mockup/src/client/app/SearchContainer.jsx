@@ -92,7 +92,7 @@ export default class SearchContainer extends React.Component {
   render() {
     if(this.state.searched) {
       return (
-        <div className="jumbotron col-sm-12 text-center">
+        <div className="jumbotron col-sm-12 text-center bg-searched">
 
           {this.state.isLoggedIn ?
             <div className="col-sm-9 float-right">
@@ -139,8 +139,8 @@ export default class SearchContainer extends React.Component {
       )
     } else {
       return (
-        <div className="jumbotron col-sm-12 text-center">
-          <h1>The Curious Canuck</h1>
+        <div className="jumbotron col-sm-12 text-center bg-image">
+          <h1 className="white">The Curious Canuck</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />
           {!this.state.isLoggedIn ?
