@@ -45,8 +45,8 @@ export default class Login extends React.Component {
     .then(data=>{
       console.log(data.token);
       console.log(data.username)
-      localStorage.setItem('token', data.token)
-      localStorage.setItem('user', data.username)
+      if (data.token) {localStorage.setItem('token', data.token)}
+      if (data.username) {localStorage.setItem('user', data.username)}
       self.props.toggleLogin()
     })
 
@@ -92,7 +92,7 @@ export default class Login extends React.Component {
               <input type="text" name="email" placeholder="Email" className="black"/>
               <label className="black">Password:</label>
               <input type="password" name="password" placeholder="Password" className="black"/>
-              <button type="submit" className="btn btn-danger start">Login</button>
+              <input type="submit" value="submit" className="btn btn-danger start"/>
             </form>
            : <button className="text-center btn btn-danger start" onClick={this.toggleLoginClick.bind(this)}>Login</button>
           }
@@ -105,7 +105,7 @@ export default class Login extends React.Component {
               <input type="text" name="email" className="black"/>
               <label className="black">Password:</label>
               <input type="password" name="password" className="black"/>
-              <input type="submit" value="Submit" className="btn btn-danger start" />
+              <input type="submit" value="submit" className="btn btn-danger start" />
             </form>
             : <button className="text-center btn btn-danger start" onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>
           }
