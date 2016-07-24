@@ -2,14 +2,14 @@ import React from 'react';
 
 export default class CreateUser extends React.Component {
 
-  handleSubmit(e){
-    e.preventDefault()
-    let data = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      password: e.target.password.value
-    }
-    fetch('/api/users',{
+handleSubmit(e){
+  e.preventDefault()
+  let data = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    password: e.target.password.value
+  }
+    fetch('/userapi/users',{
       method:'POST',
       headers:{
         "Content-type": "application/json; charset=UTF-8"
