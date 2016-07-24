@@ -45,19 +45,13 @@ export default class Login extends React.Component {
       console.log(data.username)
       localStorage.setItem('token', data.token)
       localStorage.setItem('user', data.username)
-
-      if(localStorage.token){
-        self.toggleLogin()
-      }
+      this.props.toggleLogin()
       }
     )
   }
 
-  toggleLogin(){
-    this.props.isLoggedIn()
-  }
-
   handleCreateUserSubmit(e){
+    let self=this
     e.preventDefault()
     let data = {
       name: e.target.name.value,
@@ -104,11 +98,6 @@ export default class Login extends React.Component {
             <input type="submit" value="Submit"/>
           </form>
           : <button onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>
-        }
-
-        {this.props.loggedInState ?
-          <h1>hey we logged in</h1>
-          : null
         }
       </div>
     )

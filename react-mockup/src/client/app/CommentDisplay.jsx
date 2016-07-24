@@ -16,7 +16,7 @@ export default class CommentDisplay extends React.Component{
   render(){
     console.log("App renders: ",this.props.currentComments, this.props.currentCountry)
     return (
-      <div className="john">
+      <div>
         {this.props.currentComments.comments ?
           this.props.currentComments.comments.map(function(each, id){
             return <p key={id}><strong>{each.username}</strong>: {each.comment}</p>

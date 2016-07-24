@@ -1,8 +1,22 @@
 import React from 'react';
 
-const Header = props=>
-<div>
-  <h1>The Curious Canuck</h1>
-</div>
+export default function Header(props){
 
-export default Header;
+  const emptyLocalStorage= function(){
+    console.log("Clicked")
+    console.log(localStorage)
+    localStorage.token = ""
+    console.log(localStorage)
+    props.toggleLogin()
+  }
+
+  if(localStorage.token){
+    return(
+      <header className="navbar navbar-default navbar-fixed-top text-center">
+        <h2>Heya {localStorage.user}</h2>
+        <button onClick={emptyLocalStorage}>Logout</button>
+      </header>
+    )
+  }
+
+}

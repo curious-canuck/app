@@ -18,8 +18,8 @@ export default function CommentForm(props){
 
   return (
     <form onSubmit={handleSubmit} className="jumbotron">
-      <input readOnly name="code" value={props.currentCountry} type="text" />
-      <input type="text" name="username" placeholder="Enter username" />
+      <input type="text" readOnly name="code" value={props.currentCountry} />
+      <input type="text" readOnly name="username" value={localStorage.user} />
       <input type="text" name="text" placeholder="Enter comment" />
       <input type="submit" value="Send" />
     </form>

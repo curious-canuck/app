@@ -4,6 +4,7 @@ import Results            from './Results.jsx';
 import AjaxAdapter        from '../helpers/AjaxAdapter.js'
 import CommentDisplay     from './CommentDisplay.jsx'
 import Login              from './Login.jsx'
+import Header             from './Header.jsx'
 
 const ajax = new AjaxAdapter(fetch);
 
@@ -68,10 +69,9 @@ export default class SearchContainer extends React.Component {
 
   toggleLogin(){
     this.setState({
-      isLoggedIn:true
+      isLoggedIn: !this.state.isLoggedIn
     })
   }
-
 
   render() {
     if(this.state.searched) {
@@ -85,8 +85,13 @@ export default class SearchContainer extends React.Component {
                   currentComments={this.state.currentComments}
                   currentCountry={this.state.currentCountry} />
           <Results countryData={this.state.results} />
-          <Login isLoggedIn={this.toggleLogin.bind(this)}
-                  loggedInState={this.state.isLoggedIn} />
+
+          {!localStorage.token?
+            <Login
+              toggleLogin={this.toggleLogin.bind(this)}
+              loggedInState={this.state.isLoggedIn} />
+            : <Header toggleLogin={this.toggleLogin.bind(this)} />
+          }
         </div>
       )
     } else {
@@ -95,8 +100,12 @@ export default class SearchContainer extends React.Component {
           <h1>SEARCH</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />
-          <Login isLoggedIn={this.toggleLogin.bind(this)}
-                  loggedInState={this.state.isLoggedIn} />
+          {!localStorage.token?
+            <Login
+              toggleLogin={this.toggleLogin.bind(this)}
+              loggedInState={this.state.isLoggedIn} />
+            : <Header toggleLogin={this.toggleLogin.bind(this)} />
+          }
         </div>
       )
     }
