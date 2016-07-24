@@ -70,8 +70,6 @@ export default class SearchContainer extends React.Component {
     let self = this;
     ajax.getComments(code)
       .then(function(data){
-        console.log("This is coming from handleChange",data)
-        console.log(self)
         self.setState({
           currentComments: data,
           currentCountry: code
@@ -81,24 +79,20 @@ export default class SearchContainer extends React.Component {
 
   toggleLogin(){
     if(localStorage.token){
-      console.log("logged In!")
       this.setState({
         isLoggedIn: true
       })
-      console.log("state: ", this.state.isLoggedIn)
     } else if(!localStorage.token) {
-      console.log("logged out!")
       this.setState({
         isLoggedIn: false
       })
-      console.log("state: ", this.state.isLoggedIn)
     }
   }
 
   render() {
     if(this.state.searched) {
       return (
-        <div className="jumbotron">
+        <div className="jumbotron col-sm-12 text-center">
           <h1>RESULTS</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />

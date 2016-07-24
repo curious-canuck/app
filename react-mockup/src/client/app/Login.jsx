@@ -50,7 +50,6 @@ export default class Login extends React.Component {
       self.props.toggleLogin()
     })
 
-    console.log(this)
   }
 
   handleCreateUserSubmit(e){
