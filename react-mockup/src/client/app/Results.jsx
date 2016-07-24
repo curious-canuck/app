@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Results(props){
   return (
-    <div className="col-md-8 bordered">
+    <div className="col-md-12 bordered">
       <div className="text-center">
         <h2>{props.countryData.name}</h2>
       </div>
