@@ -44,7 +44,7 @@ label {
 .fixed-left {
   position:fixed;
   left:0;
-  background-color:lightBlue;
+  background-color:lightgreen;
   height: 100vh;
   margin-bottom: 70px;
 }
@@ -58,10 +58,6 @@ label {
   background-size: cover;
   width: 100vw;
   height: 100vh;
-}
-
-.jumbotron h1, .jumbotron .h1 {
-  color: white;
 }
 
 .bg-searched .three {
@@ -79,4 +75,18 @@ label {
 
 .bg-searched .zero {
   background-color: green;
+}
+
+.bring-left {
+  left:0;
+  margin-left:0.5em;
+  width: 25%;
+}
+
+.jumbotron h1.black, .jumbotron .h1 .black {
+  color:black;
+}
+
+.jumbotron h1.white, .jumbotron .h1 .white {
+  color:black;
 }

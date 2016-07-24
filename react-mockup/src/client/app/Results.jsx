@@ -15,7 +15,7 @@ export default function Results(props){
         <div className="advisory col-md-4">
           <h3>Advisory</h3>
           <p><em>{props.countryData.advisoryText}</em></p>
-          <h2>{props.countryData.advisoryState}<p>/3</p></h2>
+          <h2>{props.countryData.advisoryState}<em>/3</em></h2>
           {/* EMBASSY */ }
           <p><strong>Embassy Location :</strong> {props.countryData.offices[0].address}</p>
         </div>

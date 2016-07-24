@@ -96,7 +96,9 @@ export default class SearchContainer extends React.Component {
 
           {this.state.isLoggedIn ?
             <div className="col-sm-9 float-right">
-              <h1>The Curious Canuck</h1>
+              <div>
+                <h1 className="black">The Curious Canuck</h1>
+              </div>
               <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                       countryData={this.state.countryData} />
             </div>
