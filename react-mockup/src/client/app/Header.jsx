@@ -8,6 +8,7 @@ export default function Header(props){
     localStorage.token = ""
     console.log(localStorage)
     props.toggleLogin()
+    console.log(props.isLoggedIn)
   }
 
   if(localStorage.token){

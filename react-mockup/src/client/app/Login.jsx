@@ -47,9 +47,10 @@ export default class Login extends React.Component {
       console.log(data.username)
       localStorage.setItem('token', data.token)
       localStorage.setItem('user', data.username)
-
-      console.log(self)
+      self.props.toggleLogin()
     })
+
+    console.log(this)
   }
 
   handleCreateUserSubmit(e){
@@ -69,39 +70,48 @@ export default class Login extends React.Component {
       body: JSON.stringify(data)
     })
     .then(data=>{
-      console.log(data)
+      console.log(this)
     })
+  }
+
+  timeoutToggle(){
+    console.log("from timeout", this)
+    setTimeout(this.props.toggleLogin(), 10000)
   }
 
   render(){
     let self=this;
+    if(this.props.isLoggedIn){
+      return <Header toggleLogin={this.props.toggleLogin} />
+    } else {
       return(
         <div className="navbar navbar-default navbar-fixed-bottom text-center">
 
           {this.state.isLoginClicked ?
-            <form onSubmit={this.handleLoginSubmit} className="input-group">
+            <form onSubmit={this.handleLoginSubmit.bind(this)} className="input-group">
               Log In:
               <input type="text" name="email" placeholder="Email"/>
               <input type="password" name="password" placeholder="Password"/>
-              <input type="submit" />
+              <button type="submit">Login</button>
             </form>
            : <button onClick={this.toggleLoginClick.bind(this)}>Login</button>
           }
 
           {this.state.isCreateUserClicked ?
-            <form onSubmit={this.handleCreateUserSubmit} >
+            <form onSubmit={this.handleCreateUserSubmit.bind(this)} >
               <label>Name:</label>
               <input type="text" name="name"/>
               <label>Email:</label>
               <input type="text" name="email"/>
               <label>Password:</label>
               <input type="password" name="password"/>
-              <input type="submit" value="Submit"/>
+              <input type="submit" value="Submit" />
             </form>
             : <button onClick={this.toggleCreateUserClick.bind(this)}>Create User</button>
           }
         </div>
       )
+    }
   }
 
 }

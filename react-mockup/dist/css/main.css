@@ -6765,3 +6765,7 @@ button.close {
 #user {
   margin-top: -150px;
 }
+
+.hide-input {
+  display:none;
+}

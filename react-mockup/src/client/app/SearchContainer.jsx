@@ -12,13 +12,25 @@ export default class SearchContainer extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      searched: false,
-      results: [],
-      countryData: [],
-      currentComments: {},
-      currentCountry: '',
-      isLoggedIn: false
+
+    if(localStorage.token){
+      this.state = {
+        searched: false,
+        results: [],
+        countryData: [],
+        currentComments: {},
+        currentCountry: '',
+        isLoggedIn: true
+      }
+    } else {
+      this.state = {
+        searched: false,
+        results: [],
+        countryData: [],
+        currentComments: {},
+        currentCountry: '',
+        isLoggedIn: false
+      }
     }
   }
 
@@ -68,9 +80,19 @@ export default class SearchContainer extends React.Component {
   }
 
   toggleLogin(){
-    this.setState({
-      isLoggedIn: !this.state.isLoggedIn
-    })
+    if(localStorage.token){
+      console.log("logged In!")
+      this.setState({
+        isLoggedIn: true
+      })
+      console.log("state: ", this.state.isLoggedIn)
+    } else if(!localStorage.token) {
+      console.log("logged out!")
+      this.setState({
+        isLoggedIn: false
+      })
+      console.log("state: ", this.state.isLoggedIn)
+    }
   }
 
   render() {
@@ -80,17 +102,21 @@ export default class SearchContainer extends React.Component {
           <h1>RESULTS</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />
-          <CommentDisplay handleChange={this.handleChange.bind(this)}
-                  handleNewComment={this.handleNewComment.bind(this)}
-                  currentComments={this.state.currentComments}
-                  currentCountry={this.state.currentCountry} />
+          {this.state.isLoggedIn ?
+            <CommentDisplay handleChange={this.handleChange.bind(this)}
+                handleNewComment={this.handleNewComment.bind(this)}
+                currentComments={this.state.currentComments}
+                currentCountry={this.state.currentCountry} />
+            : null }
           <Results countryData={this.state.results} />
 
-          {!localStorage.token?
+          {!this.state.isLoggedIn ?
             <Login
               toggleLogin={this.toggleLogin.bind(this)}
-              loggedInState={this.state.isLoggedIn} />
-            : <Header toggleLogin={this.toggleLogin.bind(this)} />
+              isLoggedIn={this.state.isLoggedIn} />
+            : <Header
+                toggleLogin={this.toggleLogin.bind(this)}
+                isLoggedIn={this.state.isLoggedIn} />
           }
         </div>
       )
@@ -100,11 +126,13 @@ export default class SearchContainer extends React.Component {
           <h1>SEARCH</h1>
           <Search onSubmitSearch={this.handleSubmitSearch.bind(this)}
                   countryData={this.state.countryData} />
-          {!localStorage.token?
+          {!this.state.isLoggedIn ?
             <Login
               toggleLogin={this.toggleLogin.bind(this)}
-              loggedInState={this.state.isLoggedIn} />
-            : <Header toggleLogin={this.toggleLogin.bind(this)} />
+              isLoggedIn={this.state.isLoggedIn} />
+            : <Header
+                toggleLogin={this.toggleLogin.bind(this)}
+                isLoggedIn={this.state.isLoggedIn} />
           }
         </div>
       )
