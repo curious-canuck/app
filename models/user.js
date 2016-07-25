@@ -1,4 +1,4 @@
-const _db     = process.env['DATABASE_URL'];
+const _db     = require('./connection');
 const bcrypt  = require('bcrypt');
 const salt    = bcrypt.genSaltSync(10);
 
