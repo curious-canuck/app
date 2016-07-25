@@ -6758,7 +6758,95 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-.form-group {
+.bordered {
+  border: 2px solid black;
+}
+
+#user {
+  margin-top: -150px;
+}
+
+.hide-input {
+  display:none;
+}
+
+.float-left {
+  float:left;
+}
+
+.float-right {
+  float:right;
+}
+
+.start {
+  margin:0.5em 0.5em;
+}
+
+input {
+  margin:0.5em;
+}
+
+label {
+  margin-left:0.5em;
+}
+
+.capitalize {
+  text-transform: capitalize;
+  margin:0.5em;
+}
+
+.dropdown {
+  padding:1em;
+  clear:both;
+  width: 100%;
+}
+
+.fixed-left {
   position:fixed;
-  top: 100px;
+  left:0;
+  background-color:lightgreen;
+  height: 100vh;
+  margin-bottom: 70px;
+}
+
+.footer {
+  border-top:0.1em solid #999;
+}
+
+.bg-image {
+  background-image: url(http://media.giphy.com/media/3oEduIYnCM7K9Qjr0c/giphy.gif);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg-searched .three {
+  /*background-color: crimson;*/
+  /*background-image:url(http://i.telegraph.co.uk/multimedia/archive/03553/trailfinders_ontar_3553207b.jpg);*/
+}
+
+.bg-searched .one {
+  background-color: yellow;
+}
+
+.bg-searched .two {
+  background-color: orange;
+}
+
+.bg-searched .zero {
+  background-color: green;
+}
+
+.bring-left {
+  left:0;
+  margin-left:0.5em;
+  width: 25%;
+}
+
+.jumbotron h1.black, .jumbotron .h1 .black {
+  color:black;
+}
+
+.jumbotron h1.white, .jumbotron .h1 .white {
+  color:white;
 }
