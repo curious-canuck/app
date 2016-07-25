@@ -6,7 +6,7 @@ module.exports = {
    let countryCode = req.params.code
     request({
       headers: {
-        "X-Auth-API-Key": TA_KEY
+        "X-Auth-API-Key": process.env['TA_KEY']
       },
       url:'https://api.tugroup.com/v1/travelsafe/countries/'+countryCode,
       method:'get',
