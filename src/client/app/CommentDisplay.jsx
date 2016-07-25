@@ -6,7 +6,7 @@ import SearchForm       from './Search.jsx'
 import CommentBox       from './CommentBox.jsx'
 import CommentForm      from './CommentForm.jsx'
 
-import AjaxAdapter      from '../helpers/AjaxAdapter.js'
+import AjaxAdapter      from '../helpers/ajaxAdapter.js'
 
 const ajax = new AjaxAdapter(fetch);
 

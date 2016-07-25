@@ -1,5 +1,5 @@
 import React        from 'react';
-import AjaxAdapter  from '../helpers/AjaxAdapter.js'
+import AjaxAdapter  from '../helpers/ajaxAdapter.js'
 
 const ajax = new AjaxAdapter(fetch);
 
