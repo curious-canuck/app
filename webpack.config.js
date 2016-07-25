@@ -22,7 +22,11 @@ module.exports = {
     reasons: true
   },
   plugins: [
-  /* GUNNA NEED Uglifier */
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    }),
     new webpack.optimize.CommonsChunkPlugin('/js/common.js'),
     new HtmlWebpackPlugin({
       title: 'Curious Canuck App',
