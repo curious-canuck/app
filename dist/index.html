@@ -1,42 +1,31 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="ie6" > <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7" > <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8" > <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9" > <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Curious Canuck App</title>
-
+Html Webpack Plugin:
+<pre>
+  TypeError: Cannot read property 'Symbol(Symbol.iterator)' of undefined
   
   
-
   
-  <link href="/css/main.css" rel="stylesheet">
+  - index.js:255 
+    [curious-canuck-app]/[html-webpack-plugin]/index.js:255:16
   
-
+  - util.js:16 tryCatcher
+    [curious-canuck-app]/[bluebird]/js/release/util.js:16:23
   
-
-</head>
-<body>
-
-
-
-<div id="container"></div>
-
-
-
-
-
-
-
-<script src="/js/common.js"></script>
-
-<script src="/js/main.js"></script>
-
-
-
-
-
-</body>
-</html>
+  - promise.js:504 Promise._settlePromiseFromHandler
+    [curious-canuck-app]/[bluebird]/js/release/promise.js:504:31
+  
+  - promise.js:561 Promise._settlePromise
+    [curious-canuck-app]/[bluebird]/js/release/promise.js:561:18
+  
+  - promise.js:598 Promise._settlePromiseCtx
+    [curious-canuck-app]/[bluebird]/js/release/promise.js:598:10
+  
+  - async.js:143 Async._drainQueue
+    [curious-canuck-app]/[bluebird]/js/release/async.js:143:12
+  
+  - async.js:148 Async._drainQueues
+    [curious-canuck-app]/[bluebird]/js/release/async.js:148:10
+  
+  - async.js:17 Immediate.Async.drainQueues [as _onImmediate]
+    [curious-canuck-app]/[bluebird]/js/release/async.js:17:14
+  
+</pre>
