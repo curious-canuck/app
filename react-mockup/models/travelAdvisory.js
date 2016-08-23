@@ -8,7 +8,7 @@ module.exports = {
       headers: {
         "X-Auth-API-Key": "hq4mup65jf8zc6awqws4puut"
       },
-      url:'https://api.tugroup.com/v1/travelsafe/countries/'+countryCode,
+      url:'https://api.tugo.com/v1/travelsafe/countries/'+countryCode,
       method:'get',
       json:true
     },(err,response,body)=>{
