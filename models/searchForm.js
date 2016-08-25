@@ -9,6 +9,7 @@ module.exports = {
 
       db.collection('code_comment')
         .find({})
+        .sort({"Name": 1})
         .toArray(function(err,data){
           if(err) throw err;
 
