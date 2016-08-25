@@ -66,7 +66,21 @@ export default class Login extends React.Component {
       body: JSON.stringify(data)
     })
     .then(data=>{
-      self.handleLoginSubmit();
+      fetch('/userapi/authenticate',{
+        method:'POST',
+        headers:{
+          "Content-type": "application/json; charset=UTF-8"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(data=>{
+        return data.json()
+      })
+      .then(data=>{
+        if (data.token) {localStorage.setItem('token', data.token)}
+        if (data.username) {localStorage.setItem('user', data.username)}
+        self.props.toggleLogin()
+      })
     })
   }
 

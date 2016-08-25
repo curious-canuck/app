@@ -3,13 +3,10 @@ import React from 'react';
 export default function Header(props){
 
   const emptyLocalStorage= function(){
-    console.log("Clicked")
-    console.log(localStorage)
     localStorage.setItem('token', '')
     localStorage.setItem('user', '')
-    console.log(localStorage)
     props.toggleLogin()
-    console.log(props.isLoggedIn)
+
   }
 
   if(localStorage.token){
