@@ -121,6 +121,8 @@ export default class SearchContainer extends React.Component {
           }
           {this.state.isLoggedIn ?
             <div className="col-sm-3 fixed-left comments">
+            <h2>Comments</h2>
+            <p>Check here for what other travelers have to say, Eh?</p>
               <CommentDisplay handleChange={this.handleChange.bind(this)}
                   handleNewComment={this.handleNewComment.bind(this)}
                   currentComments={this.state.currentComments}
