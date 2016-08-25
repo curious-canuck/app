@@ -43,8 +43,6 @@ export default class Login extends React.Component {
       return data.json()
     })
     .then(data=>{
-      console.log(data.token);
-      console.log(data.username)
       if (data.token) {localStorage.setItem('token', data.token)}
       if (data.username) {localStorage.setItem('user', data.username)}
       self.props.toggleLogin()
@@ -60,7 +58,6 @@ export default class Login extends React.Component {
       email: e.target.email.value,
       password: e.target.password.value
     }
-    console.log(data)
     fetch('/userapi/users',{
       method:'POST',
       headers:{
@@ -69,12 +66,11 @@ export default class Login extends React.Component {
       body: JSON.stringify(data)
     })
     .then(data=>{
-      console.log(this)
+      self.handleLoginSubmit();
     })
   }
 
   timeoutToggle(){
-    console.log("from timeout", this)
     setTimeout(this.props.toggleLogin(), 10000)
   }
 
