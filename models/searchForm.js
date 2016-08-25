@@ -1,6 +1,5 @@
 const {MongoClient}         = require('mongodb')
-const dbConnection          = process.env['MONGODB_URI']
-// const dbConnection          = 'mongodb://localhost:27017/countries'
+const dbConnection          = process.env['MONGODB_URI'] || 'mongodb://localhost:27017/countries'
 
 module.exports = {
 
