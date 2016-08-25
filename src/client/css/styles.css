@@ -56,7 +56,7 @@ label {
 }
 
 .bg-image {
-  background-color: slateblue;
+  background-image: url('http://www.cfau-pd.net/images/moose-pictures/moose-pictures-4.jpg');
   background-size: cover;
   width: 100vw;
   height: 100vh;
