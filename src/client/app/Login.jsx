@@ -69,7 +69,6 @@ export default class Login extends React.Component {
       return r.json();
     })
     .then(r=>{
-      console.log("from create-user", r)
       r["password"] = data.password;
       fetch('/userapi/authenticate',{
         method:'POST',
