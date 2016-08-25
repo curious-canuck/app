@@ -38,7 +38,7 @@ export default class SearchContainer extends React.Component {
     const self = this
     ajax.handleCountryList()
       .then(function(data) {
-        console.log("From Search Container, componentDidMount: ", data)
+
         self.setState({countryData: data})
       })
   }

@@ -66,6 +66,7 @@ export default class Login extends React.Component {
       body: JSON.stringify(data)
     })
     .then(data=>{
+      console.log("from create-user", data)
       fetch('/userapi/authenticate',{
         method:'POST',
         headers:{
