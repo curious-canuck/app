@@ -11,6 +11,7 @@ export default function Search(props){
   }
 
   return (
+    console.log("This is from dropdown: ", props.countryData)
     <div className="dropdown">
       <select
         name="code"

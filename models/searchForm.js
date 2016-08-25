@@ -12,7 +12,7 @@ module.exports = {
         .sort({"Name": 1})
         .toArray(function(err,data){
           if(err) throw err;
-          console.log(data)
+
           res.countries = data
           next()
         })
