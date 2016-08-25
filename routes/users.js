@@ -11,7 +11,7 @@ const sendError = (err,req,res,next)=>res.status(500).json(err)
 
 users.post('/',
     userService.createUser,
-    (req,res) => res.status(201).json({data: 'success'}).end()
+    (req,res) => res.status(201).json(res.user).end()
 )
 
 users.use( tokenService.validateToken )
